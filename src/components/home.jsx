@@ -2,9 +2,17 @@ import { useParams } from "react-router-dom"
 import { useState } from "react"
 // import {  FeaturedImageGallery } from "./Gallery"
 // import {Mempkl} from "./Mempelai"
-import { IoIosArrowDropup } from "react-icons/io";
+import { IoIosArrowDropup } from "react-icons/io"
+import ReactPlayer from 'react-player';
+import ReactAudioPlayer from 'react-audio-player';
+import { useSound } from 'use-sound';
+
 
 function Home(){
+
+    const audioUrl = '/src/assets/Tyok Satrio - Ada Untukmu (Official Music Video).mp3'; // Replace with your audio path
+    const  { sound } = useSound(audioUrl);
+  
 
     const [tombol, setTombol] = useState(false)
 
@@ -17,6 +25,15 @@ function Home(){
     return(
         
     <>
+        {/* <ReactAudioPlayer
+  src="https://www.youtube.com/watch?v=pmajAl_0yjg"
+  autoPlay
+  controls
+/> */}
+
+<audio src={audioUrl} autoPlay  hidden/>
+
+        {/* <ReactPlayer url="https://www.youtube.com/watch?v=pmajAl_0yjg" playing={true} controls loop /> */}
         <section className={`   ${toogleClassCheck} h-screen bg-center bg-no-repeat bg-gradient-to-tr from-black to-transparent relative`}>
             <div className="bg-cover w-full h-screen absolute mix-blend-overlay"></div>
             <div className=" px-20 mx-auto pt-48 text-center relative text-white font-montserat">
